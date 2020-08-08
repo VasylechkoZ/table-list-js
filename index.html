@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW</title>
+</head>
+<style>
+    .main {
+        width: 1200px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0 7px rgba(0, 0, 0, .1);
+        margin: 0 auto;
+        margin-top: -3px;
+    }
+
+    .text {
+        width: 1000px;
+        background-color: whitesmoke;
+        height: 350px;
+        margin: 0 auto;
+        display: flex;
+
+    }
+
+
+    .stl {
+        width: 1200px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0 7px rgba(0, 0, 0, .1);
+        height: 100%;
+        margin: 0 auto;
+        margin-top: -3px;
+    }
+
+    .mains {
+        width: 1200px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0 7px rgba(0, 0, 0, .1);
+        height: 100%;
+        margin: 0 auto;
+        margin-top: -3px;
+    }
+
+    #colors {
+        width: 300px;
+        height: 300px;
+        display: none;
+        flex-wrap: wrap;
+        /*        margin: auto;*/
+        outline: 1px solid black;
+    }
+
+    #colors>div {
+        width: 100px;
+        height: 100px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+</style>
+
+<body>
+    <div id="lorem" >
+
+        <div class="main">
+            <div id="texts">
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="main" id="btn">
+        <div style="color">
+            <div style="margin-left: 500px; margin-bottom: 10px">
+                <button onclick="edit();">Edit</button>
+                <button onclick="stul();">Style</button>
+            </div>
+        </div>
+    </div>
+    <!--TextArea-->
+    <div class="stl" style="display: none">
+        <div class="text">
+            <textarea name="" id="inner" cols="120" rows="15" style="margin-top: 0%; height: 300px">
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+               
+            </textarea>
+
+        </div>
+    </div>
+
+
+    <div class="mains" style="display:none">
+
+        <div class="text">
+            <div>
+                <!--Font Size-->
+
+                <div class="font_size">
+                    <p>Font Size:</p>
+
+                    <form name='radioForm'>
+                        <input type="radio" name="r" value="12">
+                        12px
+                        <input type="radio" name="r" value="14">
+                        14px
+                        <input type="radio" name="r" value="16">
+                        16px
+                        <input type="radio" name="r" value="18">
+                        18px
+                        <input type="radio" name="r" value="20">
+                        20px
+                    </form>
+                </div>
+                <br>
+                <!--Font Family-->
+                <div class="font_family">
+                    <p>Font Family:</p>
+                    <select name="mySelect" onchange="ChangeFont (this)">
+                        <option value="Choose option">Choose option</option>
+                        <option value="cursive">Cursive</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="moonspace">Moonspace</option>
+                        <option value="sens-serif">Sans-serif</option>
+                    </select>
+                </div>
+
+
+
+                <!--Font Color,Background Color-->
+                <div>
+                    <p>Colors:</p>
+                    <button onclick="change('back')">Background Color</button>
+                    <button onclick="change('color')">Text of Color</button>
+                </div>
+
+
+
+                <!--Font Style-->
+                <div style="styles">
+                    <p>Style:</p>
+                    <form name='checkForm'>
+                        <input type="checkbox" name="check" id="boldOption" onclick="bold()">Bold text
+                        <input type="checkbox" onclick="cursive()" name="cursive-option" id="cursiveOption">Cursive text
+                    </form>
+                </div>
+            </div>
+            <!--            COLOR-->
+            <div id="colors" style="margin-left: 25%; margin-top: 2.5%">
+                <div id='red' style="background-color: red"></div>
+                <div id='blue' style="background-color: blue"></div>
+                <div id='green' style="background-color: green"></div>
+                <div id='grey' style="background-color: grey"></div>
+                <div id='yellow' style="background-color: yellow"></div>
+                <div id='pink' style="background-color: pink"></div>
+                <div id='purple' style="background-color: purple"></div>
+                <div id='black' style="background-color: black"></div>
+                <div id='orange' style="background-color: orange"></div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="way" style="display: none">
+        <div class="main">
+            <div class="color">
+                <span>Choose what you want:</span>
+                <input onclick="showtable()" type="radio">
+                <span>Table</span>
+                <input name="lis" onclick="showlistMenu()" type="radio">
+                <span>List</span>
+                <br>
+            </div>
+        </div>
+    </div>
+    <!--TABLES-->
+    <div id="tables" style="display: none">
+
+        <div class="main">
+            <div class="color">
+                <div>
+                    <label>Count TR(rows):<input type="text" id="rows" value="2" style="font-family: Verdana; font-size: 12px; margin-left: 40px; width: 50px;"></label>
+                    <br>
+                    <label>Count TD(columns):<input type="text" id="columns" value="3" style="font-family: Verdana; font-size: 12px; margin-left: 15px; width: 50px;"></label>
+                </div>
+                <div>
+                    <p>Add style to your table:</p>
+                    <label>Width of TD:<input type="text" id="table-width" value="300px" style="font-family: Verdana; font-size: 12px; margin-left: 15px; width: 50px;"></label>
+                    <label>Height of TD:<input type="text" id="table-height" value="200px" style="font-family: Verdana; font-size: 12px; margin-left: 15px; width: 50px;"></label>
+                    <p><label>Border<input type="checkbox" id="checkbox" value="Рамка" style="margin-left: 15px"></label></p>
+                </div>
+                <button id="create" onclick="addTable();" style="background-color: lime; margin: 5px 15px">Create table</button>
+                <button id="create" onclick="destroyTable();" style="background-color: red; margin: 5px 15px">Destroy table</button>
+                <button id="home" onclick="home()" style="background-color: blue; margin: 5px 15px">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <!--LIST-->
+    <div id="list" style="display: none">
+
+        <div class="main">
+            <form name="myForm" onsubmit="createList(); return false;">
+                <div class="color">
+                    <label>Count Li:<input type="text" id="countli" value="" style="font-family: Verdana; font-size: 12px; margin-left: 15px; width: 50px;"></label>
+                    <br>
+
+                    <div id="marks">Marks:
+                        <select name="mySelect" id="chooseListType" onchange="setListType()">
+                            <option value="circle">circle</option>
+                            <option value="disc">disc</option>
+                            <option value="square">square</option>
+                        </select><br><br>
+                    </div>
+
+                    <button>Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="main" id="btn2">
+        <div class="color">
+            <div style="margin-left: 500px">
+                <button onclick="hide()">Add</button>
+                <button onclick='changeText()' value='Change Text'>Save</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
